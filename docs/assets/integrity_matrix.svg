@@ -1,80 +1,91 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 260" width="100%" height="100%">
   <defs>
     <style>
-      @keyframes radarSweep {
-        0% { transform: translateX(0px); opacity: 0; }
-        20% { opacity: 0.8; }
-        80% { opacity: 0.8; }
-        100% { transform: translateX(860px); opacity: 0; }
-      }
-      @keyframes blinkMatch {
-        0%, 100% { fill: #10B981; }
-        50% { fill: #34D399; }
-      }
-      .sweep-line {
-        stroke: #38BDF8;
-        stroke-width: 2;
-        filter: drop-shadow(0 0 6px #38BDF8);
-        animation: radarSweep 3.5s ease-in-out infinite;
-      }
       .matrix-card { rx: 8; ry: 8; stroke-width: 1.5; }
       .header-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; font-weight: 700; }
       .mono-code { font-family: 'SF Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 10px; }
     </style>
 
     <linearGradient id="matrixBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B132B" />
-      <stop offset="100%" stop-color="#0F172A" />
+      <stop offset="0%" stop-color="#02040A" />
+      <stop offset="100%" stop-color="#070D1A" />
+    </linearGradient>
+
+    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0" />
+      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0" />
     </linearGradient>
   </defs>
 
-  <rect width="920" height="260" rx="12" fill="url(#matrixBg)" stroke="#1E293B" stroke-width="2" />
+  <rect width="920" height="260" rx="12" fill="url(#matrixBg)" stroke="#00F2FE" stroke-opacity="0.3" stroke-width="2" />
 
   <!-- Title Ribbon -->
   <g transform="translate(30, 20)">
-    <text x="0" y="14" class="header-title" fill="#38BDF8" letter-spacing="1.2">
-      FORENSIC DISCREPANCY &amp; CRYPTOGRAPHIC PARITY MATRIX
+    <circle cx="6" cy="10" r="4" fill="#00F2FE">
+      <animate attributeName="opacity" values="0.4; 1; 0.4" dur="1.8s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3.5; 5; 3.5" dur="1.8s" repeatCount="indefinite" />
+    </circle>
+    <text x="20" y="14" class="header-title" fill="#00F2FE" letter-spacing="1.2">
+      FORENSIC DISCREPANCY &amp; CRYPTOGRAPHIC PARITY MATRIX (3-TIER VERIFICATION)
     </text>
-    <rect x="680" y="2" width="180" height="18" rx="4" fill="#065F46" stroke="#059669" stroke-width="1" />
-    <text x="690" y="15" class="mono-code" fill="#6EE7B7" font-weight="700">STATUS: INTEGRITY VERIFIED</text>
+    <rect x="680" y="2" width="180" height="18" rx="4" fill="#042616" stroke="#00FF88" stroke-width="1" />
+    <text x="690" y="15" class="mono-code" fill="#00FF88" font-weight="700">&#10003; STATUS: INTEGRITY VERIFIED</text>
   </g>
 
   <!-- 3 Verification Layers -->
   <!-- Layer 1: Physical Vault Bitstream -->
   <g transform="translate(30, 50)">
-    <rect width="860" height="52" class="matrix-card" fill="#1E293B" stroke="#334155" />
-    <circle cx="20" cy="26" r="5" fill="#38BDF8" />
-    <text x="36" y="20" class="header-title" fill="#F8FAFC">Layer 1: Vault Bitstream Recalculation</text>
+    <rect width="860" height="52" class="matrix-card" fill="#070D1A" stroke="#1E293B" />
+    <circle cx="20" cy="26" r="5" fill="#00F2FE">
+      <animate attributeName="opacity" values="0.6; 1; 0.6" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="36" y="20" class="header-title" fill="#F8FAFC">Layer 1: Vault Bitstream Recalculation (Live Disk Copy)</text>
     <text x="36" y="38" class="mono-code" fill="#94A3B8">Target: %USERPROFILE%/Documents/LexChain_Vault/files/EVD-2026-001/payload.bin</text>
-    <rect x="520" y="12" width="320" height="28" rx="4" fill="#0B132B" stroke="#1E293B" />
-    <text x="530" y="30" class="mono-code" fill="#38BDF8">SHA256: d7a8fbb307d78094...9abcb0082e4f8d56</text>
+    <rect x="520" y="12" width="320" height="28" rx="4" fill="#02040A" stroke="#00F2FE" stroke-opacity="0.4" />
+    <text x="530" y="30" class="mono-code" fill="#00F2FE">SHA256: d7a8fbb307d78094...9abcb0082e4f8d56</text>
   </g>
 
   <!-- Layer 2: SQLite Intake Reference -->
   <g transform="translate(30, 112)">
-    <rect width="860" height="52" class="matrix-card" fill="#1E293B" stroke="#059669" />
-    <circle cx="20" cy="26" r="5" fill="#10B981" />
-    <text x="36" y="20" class="header-title" fill="#F8FAFC">Layer 2: Local Relational Database Baseline</text>
-    <text x="36" y="38" class="mono-code" fill="#94A3B8">Source: lexchain.db &bull; Table: evidence &bull; Registration Record at Intake</text>
-    <rect x="520" y="12" width="320" height="28" rx="4" fill="#0B132B" stroke="#065F46" />
-    <text x="530" y="30" class="mono-code" fill="#10B981">REF_HASH: d7a8fbb307d78094...9abcb0082e4f8d56</text>
+    <rect width="860" height="52" class="matrix-card" fill="#070D1A" stroke="#00FF88" stroke-opacity="0.4" />
+    <circle cx="20" cy="26" r="5" fill="#00FF88">
+      <animate attributeName="opacity" values="0.6; 1; 0.6" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="36" y="20" class="header-title" fill="#F8FAFC">Layer 2: Local Relational Database Baseline (SQLite Ingestion)</text>
+    <text x="36" y="38" class="mono-code" fill="#94A3B8">Source: lexchain.db &#8226; Table: evidence &#8226; Registration Record at Intake</text>
+    <rect x="520" y="12" width="320" height="28" rx="4" fill="#02040A" stroke="#00FF88" stroke-opacity="0.5" />
+    <text x="530" y="30" class="mono-code" fill="#00FF88">REF_HASH: d7a8fbb307d78094...9abcb0082e4f8d56</text>
   </g>
 
   <!-- Layer 3: EVM On-Chain Immutable Anchor -->
   <g transform="translate(30, 174)">
-    <rect width="860" height="52" class="matrix-card" fill="#1E293B" stroke="#D97706" />
-    <circle cx="20" cy="26" r="5" fill="#F59E0B" />
-    <text x="36" y="20" class="header-title" fill="#F8FAFC">Layer 3: EVM EvidenceRegistry.sol Smart Contract</text>
-    <text x="36" y="38" class="mono-code" fill="#94A3B8">Contract: 0x5FbDB2315678afecb367f032d93F642f64180aa3 &bull; Block #42</text>
-    <rect x="520" y="12" width="320" height="28" rx="4" fill="#0B132B" stroke="#78350F" />
+    <rect width="860" height="52" class="matrix-card" fill="#070D1A" stroke="#F59E0B" stroke-opacity="0.4" />
+    <circle cx="20" cy="26" r="5" fill="#F59E0B">
+      <animate attributeName="opacity" values="0.6; 1; 0.6" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="36" y="20" class="header-title" fill="#F8FAFC">Layer 3: EVM EvidenceRegistry.sol Smart Contract (Decentralized Anchor)</text>
+    <text x="36" y="38" class="mono-code" fill="#94A3B8">Contract: 0x5FbDB2315678afecb367f032d93F642f64180aa3 &#8226; Block #42</text>
+    <rect x="520" y="12" width="320" height="28" rx="4" fill="#02040A" stroke="#F59E0B" stroke-opacity="0.5" />
     <text x="530" y="30" class="mono-code" fill="#FCD34D">COMMIT: 0x8f3c4e...LEXCHAIN:EV1...c4b28a91</text>
   </g>
 
-  <!-- Live Scanning Beam Animation -->
-  <line x1="30" y1="50" x2="30" y2="226" class="sweep-line" />
+  <!-- Live Scanning Laser Beam with Vertical Sweep -->
+  <g>
+    <!-- Scanning Laser Line -->
+    <line x1="30" y1="50" x2="30" y2="226" stroke="#00F2FE" stroke-width="2.5" opacity="0.85">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 860 0; 860 0; 0 0" keyTimes="0; 0.45; 0.55; 1" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.2; 1; 1; 0.2" keyTimes="0; 0.2; 0.8; 1" dur="4s" repeatCount="indefinite" />
+    </line>
+    <!-- Trailing Glow Area -->
+    <rect x="10" y="50" width="20" height="176" fill="url(#beamGrad)" opacity="0.4">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 860 0; 860 0; 0 0" keyTimes="0; 0.45; 0.55; 1" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0; 0.5; 0.5; 0" keyTimes="0; 0.2; 0.8; 1" dur="4s" repeatCount="indefinite" />
+    </rect>
+  </g>
 
   <!-- Footnote -->
   <text x="30" y="246" class="mono-code" fill="#64748B">
-    &Delta; Bit Disparity: 0 bytes altered &bull; Tamper Status: 100% Intact &bull; Cryptographic Parity: CONFIRMED
+    &#916; Bit Disparity: 0 bytes altered &#8226; Tamper Status: 100% Intact &#8226; Cryptographic Parity: CONFIRMED
   </text>
 </svg>

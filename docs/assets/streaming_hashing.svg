@@ -1,28 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 260" width="100%" height="100%">
   <defs>
     <style>
-      @keyframes chunkSlide {
-        0% { transform: translateX(0px); opacity: 0.1; }
-        20% { opacity: 1; }
-        80% { opacity: 1; }
-        100% { transform: translateX(330px); opacity: 0.1; }
-      }
       @keyframes hashPulse {
-        0%, 100% { fill: #2563EB; filter: drop-shadow(0 0 2px #2563EB); }
-        50% { fill: #38BDF8; filter: drop-shadow(0 0 10px #38BDF8); }
-      }
-      @keyframes bitStream {
-        0% { stroke-dashoffset: 80; }
-        100% { stroke-dashoffset: 0; }
-      }
-      .chunk-box {
-        animation: chunkSlide 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        0%, 100% { fill: #2563EB; }
+        50% { fill: #38BDF8; }
       }
       .bit-wire {
         stroke: #38BDF8;
         stroke-width: 2.5;
-        stroke-dasharray: 6 10;
-        animation: bitStream 1.8s linear infinite;
+        stroke-dasharray: 8 10;
         fill: none;
       }
       .card-box { rx: 8; ry: 8; stroke-width: 1.5; }
@@ -31,83 +17,102 @@
     </style>
 
     <linearGradient id="streamBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B132B" />
-      <stop offset="100%" stop-color="#0F172A" />
+      <stop offset="0%" stop-color="#02040A" />
+      <stop offset="100%" stop-color="#070D1A" />
+    </linearGradient>
+
+    <linearGradient id="chunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#2563EB" />
     </linearGradient>
   </defs>
 
-  <rect width="920" height="260" rx="12" fill="url(#streamBg)" stroke="#1E293B" stroke-width="2" />
+  <!-- Canvas Background -->
+  <rect width="920" height="260" rx="12" fill="url(#streamBg)" stroke="#00F2FE" stroke-opacity="0.3" stroke-width="2" />
 
   <!-- Header Banner -->
   <g transform="translate(30, 20)">
-    <text x="0" y="14" class="lbl-title" fill="#38BDF8" letter-spacing="1.2">
+    <circle cx="6" cy="10" r="4" fill="#00FF88">
+      <animate attributeName="opacity" values="0.4; 1; 0.4" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3.5; 5; 3.5" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="20" y="14" class="lbl-title" fill="#00F2FE" letter-spacing="1.2">
       RUST NATIVE 64KB CHUNKED STREAMING HASH &amp; DOMAIN COMMITMENT ENGINE
     </text>
-    <rect x="680" y="0" width="180" height="20" rx="4" fill="#1E293B" stroke="#334155" />
-    <text x="692" y="14" class="lbl-mono" fill="#10B981" font-weight="700">MEMORY PROFILE: O(1) CONSTANT</text>
+    <rect x="680" y="0" width="180" height="20" rx="4" fill="#0B132B" stroke="#00FF88" stroke-opacity="0.4" />
+    <text x="692" y="14" class="lbl-mono" fill="#00FF88" font-weight="700">MEMORY PROFILE: O(1) CONSTANT</text>
   </g>
 
   <!-- Left: Source Disk File Stream -->
   <g transform="translate(30, 55)">
-    <rect width="210" height="150" class="card-box" fill="#1E293B" stroke="#334155" />
-    <rect width="210" height="26" rx="8" fill="#334155" />
+    <rect width="210" height="150" class="card-box" fill="#070D1A" stroke="#1E293B" />
+    <rect width="210" height="26" rx="8" fill="#0F172A" />
     <text x="12" y="18" class="lbl-title" fill="#F8FAFC">Forensic Source File</text>
     <text x="12" y="48" class="lbl-mono" fill="#94A3B8">Disk Image / Packet Dump</text>
-    <text x="12" y="66" class="lbl-mono" fill="#38BDF8">Arbitrary Size: 1MB &ndash; 1TB+</text>
+    <text x="12" y="66" class="lbl-mono" fill="#00F2FE">Arbitrary Size: 1MB &#8211; 1TB+</text>
 
-    <rect x="12" y="80" width="186" height="56" rx="4" fill="#0B132B" stroke="#1E293B" />
+    <rect x="12" y="80" width="186" height="56" rx="4" fill="#02040A" stroke="#1E293B" />
     <text x="18" y="98" class="lbl-mono" fill="#64748B">Pre-Read Assertions:</text>
-    <text x="18" y="114" class="lbl-mono" fill="#10B981">&check; S_initial == FileSize</text>
-    <text x="18" y="128" class="lbl-mono" fill="#10B981">&check; T_initial == Modified</text>
+    <text x="18" y="114" class="lbl-mono" fill="#00FF88">&#10003; S_initial == FileSize</text>
+    <text x="18" y="128" class="lbl-mono" fill="#00FF88">&#10003; T_initial == Modified</text>
   </g>
 
   <!-- Pipeline Connection 1 -->
-  <path d="M 240 130 L 320 130" stroke="#334155" stroke-width="3" fill="none" />
-  <path d="M 240 130 L 320 130" class="bit-wire" />
+  <path d="M 240 130 L 320 130" stroke="#1E293B" stroke-width="3" fill="none" />
+  <path d="M 240 130 L 320 130" class="bit-wire">
+    <animate attributeName="stroke-dashoffset" from="80" to="0" dur="1.5s" repeatCount="indefinite" />
+  </path>
+  <!-- Moving Photon 1 -->
+  <circle cx="240" cy="130" r="3.5" fill="#00F2FE">
+    <animate attributeName="cx" values="240; 320" dur="1.5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.2; 1; 0.2" dur="1.5s" repeatCount="indefinite" />
+  </circle>
 
   <!-- Center: 64KB Buffer Pipeline -->
   <g transform="translate(320, 55)">
-    <rect width="260" height="150" class="card-box" fill="#0F172A" stroke="#2563EB" />
-    <rect width="260" height="26" rx="8" fill="#1D4ED8" />
+    <rect width="260" height="150" class="card-box" fill="#070D1A" stroke="#00F2FE" stroke-opacity="0.5" />
+    <rect width="260" height="26" rx="8" fill="#0B1E38" />
     <text x="14" y="18" class="lbl-title" fill="#FFFFFF">64KB Streaming Window (Chunked)</text>
 
-    <!-- Moving Buffer Animation -->
-    <rect x="20" y="44" width="70" height="28" rx="4" fill="#2563EB" class="chunk-box">
-      <text x="12" y="18" class="lbl-mono" fill="#FFFFFF" font-weight="700">64KB Chunk</text>
-    </rect>
+    <!-- Moving Buffer Slider (Valid SVG Group) -->
+    <g>
+      <rect x="18" y="44" width="76" height="28" rx="4" fill="url(#chunkGrad)">
+        <animate attributeName="opacity" values="0.7; 1; 0.7" dur="2s" repeatCount="indefinite" />
+      </rect>
+      <text x="24" y="62" class="lbl-mono" fill="#FFFFFF" font-weight="700">64KB Chunk</text>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 144 0; 0 0" keyTimes="0; 0.5; 1" dur="2.4s" repeatCount="indefinite" />
+    </g>
 
-    <rect x="14" y="84" width="232" height="52" rx="4" fill="#1E293B" stroke="#334155" />
-    <text x="20" y="102" class="lbl-mono" fill="#93C5FD">Digest::update(&amp;chunk)</text>
-    <text x="20" y="118" class="lbl-mono" fill="#60A5FA">Zero Heap Allocation</text>
-    <text x="20" y="130" class="lbl-mono" fill="#10B981">&check; Active Tamper Abort Guard</text>
+    <rect x="14" y="84" width="232" height="52" rx="4" fill="#02040A" stroke="#1E293B" />
+    <text x="20" y="102" class="lbl-mono" fill="#00F2FE">Digest::update(&amp;chunk)</text>
+    <text x="20" y="118" class="lbl-mono" fill="#93C5FD">Zero Heap Allocation</text>
+    <text x="20" y="130" class="lbl-mono" fill="#00FF88">&#10003; Active Tamper Abort Guard</text>
   </g>
 
   <!-- Pipeline Connection 2 -->
-  <path d="M 580 130 L 660 130" stroke="#334155" stroke-width="3" fill="none" />
-  <path d="M 580 130 L 660 130" class="bit-wire" />
+  <path d="M 580 130 L 660 130" stroke="#1E293B" stroke-width="3" fill="none" />
+  <path d="M 580 130 L 660 130" class="bit-wire" stroke="#00FF88">
+    <animate attributeName="stroke-dashoffset" from="80" to="0" dur="1.5s" repeatCount="indefinite" />
+  </path>
+  <!-- Moving Photon 2 -->
+  <circle cx="580" cy="130" r="3.5" fill="#00FF88">
+    <animate attributeName="cx" values="580; 660" dur="1.5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.2; 1; 0.2" dur="1.5s" repeatCount="indefinite" />
+  </circle>
 
   <!-- Right: Cryptographic Outputs -->
   <g transform="translate(660, 55)">
-    <rect width="230" height="150" class="card-box" fill="#1E293B" stroke="#059669" />
-    <rect width="230" height="26" rx="8" fill="#065F46" />
+    <rect width="230" height="150" class="card-box" fill="#070D1A" stroke="#00FF88" stroke-opacity="0.4" />
+    <rect width="230" height="26" rx="8" fill="#042616" />
     <text x="14" y="18" class="lbl-title" fill="#FFFFFF">Authoritative Output</text>
 
     <text x="14" y="46" class="lbl-mono" fill="#94A3B8">1. Raw Bitstream SHA-256:</text>
-    <rect x="14" y="52" width="202" height="22" rx="3" fill="#0B132B" stroke="#047857" />
-    <text x="18" y="67" class="lbl-mono" fill="#34D399" font-size="9">d7a8fbb307d78094...c9e592</text>
+    <rect x="14" y="52" width="202" height="22" rx="3" fill="#02040A" stroke="#00FF88" stroke-opacity="0.3" />
+    <text x="18" y="67" class="lbl-mono" fill="#00FF88" font-size="9">d7a8fbb307d78094...c9e592</text>
 
     <text x="14" y="92" class="lbl-mono" fill="#94A3B8">2. Domain-Separated Commitment:</text>
-    <rect x="14" y="98" width="202" height="34" rx="3" fill="#0B132B" stroke="#D97706" />
-    <text x="18" y="112" class="lbl-mono" fill="#FCD34D" font-size="8.5">LEXCHAIN:EV1:CASE:FILE:SIZE:HASH</text>
-    <text x="18" y="125" class="lbl-mono" fill="#FDE68A" font-size="8.5">&rarr; 32-Byte Immutable Anchor</text>
-  </g>
-
-  <!-- Bottom Concurrency Guard Bar -->
-  <g transform="translate(30, 220)">
-    <rect width="860" height="24" rx="4" fill="#0B132B" stroke="#334155" />
-    <circle cx="16" cy="12" r="4" fill="#10B981" />
-    <text x="30" y="16" class="lbl-mono" fill="#94A3B8">
-      Post-Read Concurrency Assertion: S_initial == S_final &amp;&amp; T_initial == T_final &bull; 0 Byte Drift &bull; Stream Integrity Validated
-    </text>
+    <rect x="14" y="98" width="202" height="34" rx="3" fill="#02040A" stroke="#00F2FE" stroke-opacity="0.3" />
+    <text x="18" y="112" class="lbl-mono" fill="#00F2FE" font-size="8.5">LEXCHAIN:EV1:CAS-2026-001</text>
+    <text x="18" y="125" class="lbl-mono" fill="#FCD34D" font-size="8.5">0x9b4ae8c142b93e82...5e1a</text>
   </g>
 </svg>
