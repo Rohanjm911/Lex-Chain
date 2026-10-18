@@ -195,6 +195,12 @@ graph TD
    - Generates official multi-page Audit Sheets (`LexChain_AuditSheet_YYYY-MM-DD.pdf`) with dark navy headers, operator attribution, filter parameters, and complete audit tables with dynamic pagination (`Page X of Y`).
    - Exports certified individual Evidence Dossiers (`LexChain_Dossier_EVD-XXX.pdf`) and Chain of Custody Sheets (`LexChain_CustodySheet_YYYY-MM-DD.pdf`).
 
+9. **Interactive Forensic Operations Manual & How to Use SOP (`HowToUseView`)**
+   - Built-in operational manual covering end-to-end evidence ingestion, blockchain proof anchoring, 3-way parity matrix verification, and chain-of-custody protocols.
+   - Dedicated role-specific playbooks tailored for Administrators, Field Investigators, Forensic Verifiers, and Court Auditors.
+   - Interactive CLI command and script reference for single-click `.bat` runners (`run_lexchain.bat`, `stop_lexchain.bat`).
+   - Integrated forensic search filter and searchable troubleshooting FAQ covering FRE 901 compliance, offline EVM queueing, and hardware write-blocker recommendations.
+
 ---
 
 ## Architecture Overview

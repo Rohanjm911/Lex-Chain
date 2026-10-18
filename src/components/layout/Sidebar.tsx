@@ -10,6 +10,7 @@ import {
   Settings,
   Shield,
   UserCheck,
+  BookOpen,
 } from "lucide-react";
 import { AuthUser, UserRole } from "../../types";
 
@@ -22,6 +23,7 @@ export type NavSection =
   | "custody"
   | "blockchain"
   | "audit"
+  | "guide"
   | "settings";
 
 interface SidebarProps {
@@ -57,6 +59,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       custody: "EVM Gas & Ledger",
       blockchain: "RPC & Queue Admin",
       audit: "Privileged SysOps Logs",
+      guide: "How to Use & Operations SOP",
       settings: "Node & Workstation Config",
     },
     Investigator: {
@@ -68,6 +71,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       custody: "Physical Custody Handoffs",
       blockchain: "On-Chain Case Receipts",
       audit: "Evidence Activity Trail",
+      guide: "Field Operations & How to Use",
       settings: "Investigator Profile",
     },
     Verifier: {
@@ -79,6 +83,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       custody: "Transfer Parity Ledger",
       blockchain: "Smart Contract Anchors",
       audit: "Cryptographic Attributions",
+      guide: "Parity Protocols & How to Use",
       settings: "Verification Algorithms",
     },
     Auditor: {
@@ -90,6 +95,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       custody: "Continuity DAG Analysis",
       blockchain: "Decentralized Proofs",
       audit: "Statutory Audit Records",
+      guide: "Legal SOP & How to Use",
       settings: "Compliance & Legal Policies",
     },
   };
@@ -107,6 +113,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       badge: pendingCount > 0 ? pendingCount : null,
     },
     { id: "audit", icon: ScrollText },
+    { id: "guide", icon: BookOpen },
     { id: "settings", icon: Settings },
   ];
 
@@ -120,6 +127,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       custody: "Tx Gas & Blocks",
       blockchain: "RPC & Queue Admin",
       audit: "Privilege Syslog",
+      guide: "Operations SOP & Guide",
       settings: "Node Configuration",
     },
     Investigator: {
@@ -131,6 +139,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       custody: "Physical Transfers",
       blockchain: "On-Chain Receipts",
       audit: "Evidence Activity",
+      guide: "Field SOP & Protocol Guide",
       settings: "Officer Credentials",
     },
     Verifier: {
@@ -142,6 +151,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       custody: "Integrity Handoffs",
       blockchain: "Smart Contract Anchors",
       audit: "Discrepancy Alerts",
+      guide: "Verification Protocols",
       settings: "Crypto Algorithms",
     },
     Auditor: {
@@ -153,6 +163,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       custody: "Continuity DAG",
       blockchain: "Immutability Proofs",
       audit: "Regulatory Audit",
+      guide: "FRE 901 Statutory Guide",
       settings: "Audit Policies",
     },
   };

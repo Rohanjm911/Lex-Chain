@@ -10,6 +10,7 @@ import { ChainOfCustodyView } from "./components/views/ChainOfCustodyView";
 import { BlockchainRecordsView } from "./components/views/BlockchainRecordsView";
 import { AuditLogsView } from "./components/views/AuditLogsView";
 import { SettingsView } from "./components/views/SettingsView";
+import { HowToUseView } from "./components/views/HowToUseView";
 import { EvidenceDetailModal } from "./components/views/EvidenceDetailModal";
 
 import {
@@ -194,6 +195,11 @@ export function App() {
         subtitle:
           "Filesystem storage bounds, JSON-RPC provider endpoints, and smart contract bindings.",
       },
+      guide: {
+        title: "Forensic Operations & System Usage Guide",
+        subtitle:
+          "Comprehensive field manual, cryptographic 3-way parity architecture, forensic CLI tooling, and standard operating procedures.",
+      },
     },
     Investigator: {
       dashboard: {
@@ -240,6 +246,11 @@ export function App() {
         title: "Investigator Officer Credentials & Station Profile",
         subtitle:
           "Officer badge ID, field intake preferences, and local cryptographic parameters.",
+      },
+      guide: {
+        title: "Investigator Field SOP & System Usage Guide",
+        subtitle:
+          "ISO/IEC 27037 field intake instructions, digital bag-and-tag protocols, and live evidence custody management.",
       },
     },
     Verifier: {
@@ -288,6 +299,11 @@ export function App() {
         subtitle:
           "FIPS 180-4 cryptographic parameters, stream buffer size, and multi-hash configurations.",
       },
+      guide: {
+        title: "Verifier Cryptographic Protocols & System Usage Guide",
+        subtitle:
+          "In-depth guide to 3-way bitstream parity, SHA-256 integrity mathematical verification, and tamper quarantine handling.",
+      },
     },
     Auditor: {
       dashboard: {
@@ -334,6 +350,11 @@ export function App() {
         title: "Auditor Compliance Policies & Court Jurisdiction Config",
         subtitle:
           "Federal court admissibility rules, retention schedules, and statutory compliance frameworks.",
+      },
+      guide: {
+        title: "Auditor Court Admissibility & System Usage Guide",
+        subtitle:
+          "Federal Rules of Evidence 901 compliance, continuous chain-of-custody verification, and certified PDF report exports.",
       },
     },
   };
@@ -473,6 +494,17 @@ export function App() {
                 checkNetwork();
                 refreshData();
               }}
+            />
+          )}
+
+          {activeSection === "guide" && (
+            <HowToUseView
+              onNavigate={(sec) => {
+                setActiveSection(sec);
+                if (sec !== "verify") setPreselectedVerifyId(null);
+                if (sec !== "import") setPreselectedCaseId(null);
+              }}
+              currentUser={currentUser}
             />
           )}
         </main>
