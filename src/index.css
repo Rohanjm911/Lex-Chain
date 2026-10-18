@@ -20,8 +20,7 @@ body {
   user-select: none;
   background-color: #02040a;
   color: #f1f5f9;
-  /* Cyber Security SOC Tactical Grid & Radar Glows */
-  background-image: 
+    background-image: 
     radial-gradient(circle at 10% 8%, rgba(0, 242, 254, 0.12) 0%, transparent 45%),
     radial-gradient(circle at 92% 92%, rgba(0, 255, 136, 0.08) 0%, transparent 50%),
     linear-gradient(rgba(0, 242, 254, 0.035) 1px, transparent 1px),
@@ -30,7 +29,6 @@ body {
   background-attachment: fixed;
 }
 
-/* Custom Cyber Security Neon Scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -56,25 +54,18 @@ body {
   outline-offset: 1px;
 }
 
-/* Cyber Selection Highlight */
 ::selection {
   background-color: rgba(0, 242, 254, 0.35);
   color: #ffffff;
 }
 
-/* -------------------------------------------------------------------------
-   CYBER SECURITY DEFENSE PLATFORM THEME ENGINE
-   Deep Stealth Carbon • Neon Electric Cyan • Terminal Matrix Green
-   ------------------------------------------------------------------------- */
 
-/* Primary view containers */
 .bg-\[\#F5F5F7\],
 .bg-\[\#070a14\],
 .bg-\[\#070A14\] {
   background-color: #02040a !important;
 }
 
-/* Tactical Glassmorphic Cards & Containers */
 .bg-white,
 .bg-white\/75,
 .bg-white\/80,
@@ -89,7 +80,6 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(0, 242, 254, 0.15) !important;
 }
 
-/* Tactical Card Hover: Electric Neon Glow */
 .group:hover .bg-white\/75,
 .bg-white:hover,
 .bg-white\/75:hover,
@@ -98,7 +88,6 @@ body {
   box-shadow: 0 14px 44px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 242, 254, 0.25), inset 0 1px 0 rgba(0, 242, 254, 0.3) !important;
 }
 
-/* High-Contrast Typography */
 .text-slate-900,
 .text-slate-800 {
   color: #ffffff !important;
@@ -121,7 +110,6 @@ body {
   color: #64748b !important;
 }
 
-/* Cyber Security Borders */
 .border-slate-200,
 .border-slate-200\/60,
 .border-slate-200\/70,
@@ -136,7 +124,6 @@ body {
   border-color: rgba(0, 242, 254, 0.12) !important;
 }
 
-/* Tactical Form Controls, Inputs & Filters */
 input, select, textarea {
   color: #00ff88 !important;
   background-color: rgba(4, 9, 20, 0.95) !important;
@@ -159,7 +146,6 @@ select option {
   color: #f1f5f9 !important;
 }
 
-/* Cyber Terminal Badges & Pill Containers */
 .bg-slate-50,
 .bg-slate-100,
 .bg-slate-100\/60,
@@ -172,7 +158,6 @@ select option {
   color: #f1f5f9 !important;
 }
 
-/* Tables & Grid Rows */
 .hover\:bg-slate-50:hover,
 .hover\:bg-slate-50\/70:hover,
 .hover\:bg-slate-100:hover,
@@ -185,7 +170,6 @@ select option {
   border-color: rgba(0, 242, 254, 0.12) !important;
 }
 
-/* Modal Backdrops with Tactical Defocus */
 .bg-slate-900\/40,
 .bg-slate-900\/50,
 .bg-black\/40 {
@@ -194,12 +178,10 @@ select option {
   -webkit-backdrop-filter: blur(20px) !important;
 }
 
-/* Monospace Hashes & Security Digests: Matrix Glow */
 .font-mono {
   letter-spacing: -0.01em;
 }
 
-/* Cyber Security Glowing Status Classes */
 .cyber-glow-cyan {
   box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
 }

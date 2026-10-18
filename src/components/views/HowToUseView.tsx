@@ -219,8 +219,7 @@ export const HowToUseView: React.FC<HowToUseViewProps> = ({
 
   return (
     <div className="p-8 space-y-7 overflow-y-auto max-h-full bg-[#02040A] text-slate-100 font-sans">
-      {/* Top Cyber Security Header Banner */}
-      <div className="bg-[#070D1A]/90 backdrop-blur-2xl border border-cyan-500/25 rounded-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.6)] relative overflow-hidden">
+            <div className="bg-[#070D1A]/90 backdrop-blur-2xl border border-cyan-500/25 rounded-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.6)] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/[0.04] rounded-full blur-3xl pointer-events-none" />
 
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 relative z-10">
@@ -251,8 +250,7 @@ export const HowToUseView: React.FC<HowToUseViewProps> = ({
           </div>
         </div>
 
-        {/* Search Bar */}
-        <div className="mt-6 flex flex-col sm:flex-row items-center gap-3">
+                <div className="mt-6 flex flex-col sm:flex-row items-center gap-3">
           <div className="relative flex-1 w-full">
             <Search className="w-4 h-4 text-cyan-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
@@ -291,8 +289,7 @@ export const HowToUseView: React.FC<HowToUseViewProps> = ({
         </div>
       </div>
 
-      {/* Navigation Tabs */}
-      <div className="flex flex-wrap items-center gap-2 border-b border-cyan-500/15 pb-4">
+            <div className="flex flex-wrap items-center gap-2 border-b border-cyan-500/15 pb-4">
         {[
           { id: "workflow", label: "End-to-End Workflow (5 Steps)", icon: Layers },
           { id: "roles", label: "Security Role Workstations", icon: Shield },
@@ -320,8 +317,7 @@ export const HowToUseView: React.FC<HowToUseViewProps> = ({
         })}
       </div>
 
-      {/* TAB 1: WORKFLOW */}
-      {activeTab === "workflow" && (
+            {activeTab === "workflow" && (
         <div className="space-y-5">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
@@ -384,8 +380,7 @@ export const HowToUseView: React.FC<HowToUseViewProps> = ({
         </div>
       )}
 
-      {/* TAB 2: ROLES */}
-      {activeTab === "roles" && (
+            {activeTab === "roles" && (
         <div className="space-y-5">
           <div className="p-4 rounded-3xl bg-[#070D1A]/90 border border-cyan-500/25 text-xs text-slate-300">
             <span className="font-bold text-white">Role-Based Access Control (RBAC):</span> LexChain features 4 distinct operational security workstations. You can switch your active role anytime using the role selector in the left sidebar or the top profile bar.
@@ -446,8 +441,7 @@ export const HowToUseView: React.FC<HowToUseViewProps> = ({
         </div>
       )}
 
-      {/* TAB 3: 3-WAY PARITY ARCHITECTURE */}
-      {activeTab === "parity" && (
+            {activeTab === "parity" && (
         <div className="space-y-5">
           <div className="bg-[#070D1A]/90 backdrop-blur-2xl border border-cyan-500/25 rounded-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.6)] space-y-4">
             <h2 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
@@ -508,8 +502,7 @@ export const HowToUseView: React.FC<HowToUseViewProps> = ({
         </div>
       )}
 
-      {/* TAB 4: COURT PDF EXPORTS */}
-      {activeTab === "reports" && (
+            {activeTab === "reports" && (
         <div className="space-y-5">
           <div className="bg-[#070D1A]/90 backdrop-blur-2xl border border-cyan-500/25 rounded-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.6)] space-y-4">
             <h2 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
@@ -585,8 +578,7 @@ export const HowToUseView: React.FC<HowToUseViewProps> = ({
         </div>
       )}
 
-      {/* TAB 5: CLI & SCRIPTS */}
-      {activeTab === "cli" && (
+            {activeTab === "cli" && (
         <div className="space-y-5">
           <div className="bg-[#070D1A]/90 backdrop-blur-2xl border border-cyan-500/25 rounded-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.6)] space-y-4">
             <h2 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
@@ -666,8 +658,7 @@ export const HowToUseView: React.FC<HowToUseViewProps> = ({
         </div>
       )}
 
-      {/* TAB 6: FAQ */}
-      {activeTab === "faq" && (
+            {activeTab === "faq" && (
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">

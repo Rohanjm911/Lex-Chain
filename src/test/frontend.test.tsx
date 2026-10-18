@@ -313,8 +313,7 @@ describe("Header Component", () => {
 
 describe("PDF Generation Services", () => {
   beforeEach(() => {
-    // Ensure document.createElement('a') doesn't throw on click
-    vi.spyOn(HTMLAnchorElement.prototype, "click").mockImplementation(() => {});
+        vi.spyOn(HTMLAnchorElement.prototype, "click").mockImplementation(() => {});
   });
 
   afterEach(() => {

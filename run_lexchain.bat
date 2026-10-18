@@ -2,7 +2,6 @@
 setlocal EnableDelayedExpansion
 title LexChain — System Launcher (All Components)
 
-:: Strip trailing backslash from ROOT_DIR if present
 set "ROOT_DIR=%~dp0"
 if "%ROOT_DIR:~-1%"=="\" set "ROOT_DIR=%ROOT_DIR:~0,-1%"
 cd /d "%ROOT_DIR%"
@@ -13,7 +12,6 @@ echo     "Preserve the Evidence. Prove Its Integrity."
 echo ===============================================================================
 echo.
 
-:: 1. Check Node.js
 where node >nul 2>&1
 if %ERRORLEVEL% neq 0 (
     echo [ERROR] Node.js was not found in your system PATH!
@@ -23,7 +21,6 @@ if %ERRORLEVEL% neq 0 (
     exit /b 1
 )
 
-:: 2. Initialize Evidence Vault Directories
 echo [*] [1/4] Preparing Local Evidence Vault Storage...
 set "VAULT_DIR=%USERPROFILE%\Documents\LexChain_Vault"
 if not exist "%VAULT_DIR%" mkdir "%VAULT_DIR%"
@@ -33,7 +30,6 @@ if not exist "%VAULT_DIR%\backups" mkdir "%VAULT_DIR%\backups"
 echo [+] Evidence Vault ready: %VAULT_DIR%
 echo.
 
-:: 3. Check and Start EVM Blockchain Node (Port 8545)
 echo [*] [2/4] Initializing Local EVM Blockchain Node (Port 8545)...
 netstat -ano | findstr :8545 >nul 2>&1
 if %ERRORLEVEL% equ 0 (
@@ -64,7 +60,6 @@ echo [!] Notice: Node startup is taking longer than usual. Continuing...
 echo [+] Local EVM Blockchain Node is active and listening!
 echo.
 
-:: 4. Deploy Smart Contract
 echo [*] [3/4] Deploying EvidenceRegistry Smart Contract to Local EVM...
 cd /d "%ROOT_DIR%\blockchain"
 call npx hardhat run scripts/deploy.js --network localhost
@@ -76,7 +71,6 @@ if %ERRORLEVEL% equ 0 (
 cd /d "%ROOT_DIR%"
 echo.
 
-:: 5. Launch LexChain Desktop Application (.exe)
 echo [*] [4/4] Starting LexChain Desktop Application...
 
 if exist "%ROOT_DIR%\src-tauri\target\release\lexchain.exe" (
