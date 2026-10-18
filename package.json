@@ -1,0 +1,51 @@
+{
+  "name": "lexchain",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:exe": "tauri build --no-bundle",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "test": "vitest run",
+    "test:backend": "cd src-tauri && cargo test --lib",
+    "blockchain:test": "cd blockchain && npx hardhat test",
+    "blockchain:node": "cd blockchain && npx hardhat node",
+    "blockchain:deploy": "cd blockchain && npx hardhat run scripts/deploy.js --network localhost",
+    "test:all": "npm run test:backend && npm run blockchain:test && npm run test"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.9.2",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-dialog": "^2.8.3",
+    "@tauri-apps/plugin-opener": "^2",
+    "clsx": "^2.1.1",
+    "ethers": "^6.17.0",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^1.59.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.90.0",
+    "react-router-dom": "^7.18.4",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^6.0.2",
+    "autoprefixer": "^10.6.1",
+    "jsdom": "^29.1.1",
+    "postcss": "^8.5.30",
+    "tailwindcss": "^3.4.19",
+    "typescript": "~6.0.3",
+    "vite": "^8.0.16",
+    "vitest": "^5.0.5"
+  }
+}

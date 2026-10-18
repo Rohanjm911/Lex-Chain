@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 240" width="100%" height="100%">
+  <defs>
+    <style>
+      @keyframes blockChainGlow {
+        0%, 100% { filter: drop-shadow(0 0 4px #F59E0B); }
+        50% { filter: drop-shadow(0 0 14px #FBBF24); }
+      }
+      @keyframes linkFlow {
+        0% { stroke-dashoffset: 40; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes newBlockMine {
+        0% { opacity: 0.3; transform: scale(0.96); }
+        50% { opacity: 1; transform: scale(1); }
+        100% { opacity: 0.3; transform: scale(0.96); }
+      }
+      .chain-link {
+        stroke: #F59E0B;
+        stroke-width: 2.5;
+        stroke-dasharray: 6 6;
+        animation: linkFlow 2s linear infinite;
+        fill: none;
+      }
+      .mined-card {
+        animation: blockChainGlow 3s ease-in-out infinite;
+      }
+      .lbl-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; font-weight: 700; }
+      .lbl-mono { font-family: 'SF Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 10px; }
+    </style>
+
+    <linearGradient id="chainBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B132B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+
+    <linearGradient id="blockGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+
+  <rect width="920" height="240" rx="12" fill="url(#chainBg)" stroke="#1E293B" stroke-width="2" />
+
+  <!-- Header -->
+  <g transform="translate(30, 20)">
+    <text x="0" y="14" class="lbl-title" fill="#FBBF24" letter-spacing="1.2">
+      DECENTRALIZED EVM IMMUTABLE PROOF-OF-EXISTENCE &amp; BLOCKCHAIN ANCHORING
+    </text>
+    <rect x="680" y="0" width="180" height="20" rx="4" fill="#1E293B" stroke="#78350F" />
+    <text x="696" y="14" class="lbl-mono" fill="#FCD34D" font-weight="700">CHAIN ID: 31337 / SEPOLIA</text>
+  </g>
+
+  <!-- Block 41 -->
+  <g transform="translate(30, 55)">
+    <rect width="240" height="150" rx="8" fill="url(#blockGrad)" stroke="#334155" stroke-width="1.5" />
+    <rect width="240" height="28" rx="8" fill="#1E293B" />
+    <text x="12" y="19" class="lbl-title" fill="#F8FAFC">Block #41 (Confirmed)</text>
+    <text x="180" y="19" class="lbl-mono" fill="#10B981">&check; MINED</text>
+
+    <text x="12" y="48" class="lbl-mono" fill="#64748B">PrevHash: 0x4a12...89b1</text>
+    <text x="12" y="64" class="lbl-mono" fill="#64748B">StateRoot: 0x98cf...041e</text>
+
+    <rect x="10" y="74" width="220" height="66" rx="4" fill="#0B132B" stroke="#1E293B" />
+    <text x="16" y="92" class="lbl-mono" fill="#38BDF8">Tx: registerEvidence()</text>
+    <text x="16" y="106" class="lbl-mono" fill="#94A3B8">ID: EVD-2026-001</text>
+    <text x="16" y="122" class="lbl-mono" fill="#FCD34D" font-size="8.5">Commit: 0x8f3c...LEXCHAIN:EV1</text>
+    <text x="16" y="134" class="lbl-mono" fill="#10B981" font-size="8.5">Gas: 92,450 &bull; Status: SUCCESS</text>
+  </g>
+
+  <!-- Chaining Link 1 -->
+  <path d="M 270 130 L 340 130" stroke="#334155" stroke-width="3" fill="none" />
+  <path d="M 270 130 L 340 130" class="chain-link" />
+
+  <!-- Block 42 (Active/Target Block) -->
+  <g transform="translate(340, 55)">
+    <rect width="240" height="150" rx="8" fill="url(#blockGrad)" stroke="#D97706" stroke-width="2" class="mined-card" />
+    <rect width="240" height="28" rx="8" fill="#78350F" />
+    <text x="12" y="19" class="lbl-title" fill="#FFFFFF">Block #42 (Authoritative)</text>
+    <text x="180" y="19" class="lbl-mono" fill="#FCD34D">&bull; ACTIVE</text>
+
+    <text x="12" y="48" class="lbl-mono" fill="#94A3B8">PrevHash: 0xb57c...90e2</text>
+    <text x="12" y="64" class="lbl-mono" fill="#94A3B8">EvidenceRegistry.sol</text>
+
+    <rect x="10" y="74" width="220" height="66" rx="4" fill="#0B132B" stroke="#B45309" />
+    <text x="16" y="92" class="lbl-mono" fill="#38BDF8">Tx: anchorCustodyEvent()</text>
+    <text x="16" y="106" class="lbl-mono" fill="#94A3B8">Type: CUSTODY_TRANSFERRED</text>
+    <text x="16" y="122" class="lbl-mono" fill="#FCD34D" font-size="8.5">Keccak: 0x12a8...f9c0</text>
+    <text x="16" y="134" class="lbl-mono" fill="#10B981" font-size="8.5">Gas: 48,210 &bull; Status: CONFIRMED</text>
+  </g>
+
+  <!-- Chaining Link 2 -->
+  <path d="M 580 130 L 650 130" stroke="#334155" stroke-width="3" fill="none" />
+  <path d="M 580 130 L 650 130" class="chain-link" />
+
+  <!-- Block 43 (Pending / Queue Sync) -->
+  <g transform="translate(650, 55)">
+    <rect width="240" height="150" rx="8" fill="url(#blockGrad)" stroke="#334155" stroke-width="1.5" />
+    <rect width="240" height="28" rx="8" fill="#1E293B" />
+    <text x="12" y="19" class="lbl-title" fill="#94A3B8">Block #43 (Offline Queue)</text>
+    <text x="180" y="19" class="lbl-mono" fill="#60A5FA">&bull; SYNCING</text>
+
+    <text x="12" y="48" class="lbl-mono" fill="#64748B">Batch Buffer: 1 Pending Op</text>
+    <text x="12" y="64" class="lbl-mono" fill="#64748B">Automatic Reconnect Drain</text>
+
+    <rect x="10" y="74" width="220" height="66" rx="4" fill="#0B132B" stroke="#1E293B" />
+    <text x="16" y="92" class="lbl-mono" fill="#60A5FA">Queued: registerEvidence()</text>
+    <text x="16" y="106" class="lbl-mono" fill="#64748B">Source: SQLite blockchain_queue</text>
+    <text x="16" y="122" class="lbl-mono" fill="#FCD34D" font-size="8.5">Nonce Auto-Managed</text>
+    <text x="16" y="134" class="lbl-mono" fill="#38BDF8" font-size="8.5">State: Ready for Mining</text>
+  </g>
+</svg>
