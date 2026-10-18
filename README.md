@@ -41,6 +41,30 @@ Built with a compiled **Rust (Tauri 2)** backend and a hardened **React 19 / Typ
 
 ---
 
+## 🖥️ Cyber Security SOC Interface & Workstation Showcase
+
+LexChain features an authentic **Cyber Security Operations Center (SOC)** interface designed for high-density forensic operations — equipped with a **Tactical 36px Cyber Radar Grid**, **High-Voltage Electric Cyan** operational highlights, **Terminal Matrix Green** integrity verifications, and **Stealth Carbon Glassmorphic** telemetry containers.
+
+<p align="center">
+  <img src="docs/assets/screenshots/dashboard_soc.png" width="100%" alt="LexChain Cyber Security SOC Telemetry Dashboard" />
+</p>
+<p align="center">
+  <em>Figure 1: LexChain Cyber Security SOC Workstation — Live cryptographic parity distribution, real-time EVM radar telemetry, and tactical forensic metrics.</em>
+</p>
+
+<br />
+
+<div align="center">
+
+| 📁 Forensic Evidence Vault & Hash Matrix | ⛓️ EVM Smart Contract Records & Queue |
+| :---: | :---: |
+| <img src="docs/assets/screenshots/evidence_vault_soc.png" width="100%" alt="Evidence Vault Lockers & Bitstream Digests" /> | <img src="docs/assets/screenshots/blockchain_records_soc.png" width="100%" alt="Blockchain Records & EVM Smart Contract Ledger" /> |
+| _Figure 2: Evidence Vault Lockers & SHA-256 Bitstream Digests_ | _Figure 3: EVM On-Chain Records, Gas Telemetry & Mempool Queue_ |
+
+</div>
+
+---
+
 ## Technology Stack & Real-Life Logos
 
 LexChain is architected using an enterprise-grade desktop, systems programming, and Web3 stack:
